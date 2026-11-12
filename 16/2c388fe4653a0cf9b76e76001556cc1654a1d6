@@ -1,0 +1,13 @@
+jaxrs-api/src/main/java/jakarta/ws/rs/core/NewCookie.java
+  unrecorded 2,215-221,229-230,297-324,576-581,622-628,639-647
+jaxrs-api/src/test/java/jakarta/ws/rs/core/NewCookieTest.java
+  unrecorded 2,25-26,124-151
+jaxrs-api/src/test/java/jakarta/ws/rs/core/NewCookieBuilderTest.java
+  unrecorded 2,21-22,24-25,27,60-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_track_version": "development:0.1.0",
+  "base_commit_sha": "162c388fe4653a0cf9b76e76001556cc1654a1d6",
+  "prompts": {}
+}

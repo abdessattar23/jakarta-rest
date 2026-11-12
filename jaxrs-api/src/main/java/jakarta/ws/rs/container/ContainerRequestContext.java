@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2012, 2026 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -385,9 +385,15 @@ public interface ContainerRequestContext {
 
     /**
      * Abort the filter chain with a response.
-     *
+     * <p>
      * This method breaks the filter chain processing and returns the provided response back to the client. The provided
      * response goes through the chain of applicable response filters.
+     * </p>
+     * <p>
+     * Invoked from a {@link PreMatching pre-match} filter, post-match request filters do not run. A name-bound
+     * authorization filter is a post-match filter unless it is itself annotated with {@link PreMatching}. See
+     * {@link ContainerRequestFilter}.
+     * </p>
      *
      * @param response response to be sent back to the client.
      * @throws IllegalStateException in case the method is invoked from a response filter.

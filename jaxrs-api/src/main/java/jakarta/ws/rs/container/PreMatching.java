@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, 2019 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2012, 2026 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -30,6 +30,11 @@ import java.lang.annotation.Target;
  * The JAX-RS runtime will apply the filters marked with the {@code @PreMatching} annotation globally to all resources,
  * before the incoming request has been matched to a particular resource method. Any {@link jakarta.ws.rs.NameBinding
  * named binding annotations} will be ignored on a component annotated with the {@code @PreMatching} annotation.
+ * </p>
+ * <p>
+ * {@link ContainerRequestContext#abortWith} on a pre-match filter skips post-match request filters, including a
+ * name-bound authorization filter. An authorization filter that must not be skipped belongs on this extension point,
+ * ahead of any pre-match filter that may abort the chain.
  * </p>
  *
  * @author Marek Potociar
